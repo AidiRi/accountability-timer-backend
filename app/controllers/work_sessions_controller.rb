@@ -7,6 +7,7 @@ class WorkSessionsController < ApplicationController
 
   def create
     work_session = WorkSession.create(work_session_params)
+    byebug
     render json: work_session
   end
 
@@ -22,7 +23,7 @@ class WorkSessionsController < ApplicationController
   private
 
     def work_session_params
-      params.require(:work_session).permit(:start_time, :end_time, :total_time, :note, :authenticity_token)
+      params.require(:work_session).permit(:start_time, :end_time, :total_time, :note, :user_id, :authenticity_token)
     end
 
 end

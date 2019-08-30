@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    user =
+    
     tasks = Task.all
     render json: tasks
   end
